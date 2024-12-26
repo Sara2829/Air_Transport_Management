@@ -1,4 +1,4 @@
-package net.AirTransportationManagement.AirtransportManagement;
+package net.AirTransportationManagement.AirtransportManagement.controller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
