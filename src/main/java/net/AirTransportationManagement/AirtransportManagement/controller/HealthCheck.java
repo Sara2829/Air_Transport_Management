@@ -10,4 +10,9 @@ public class HealthCheck {
     public String healthcheck(){
         return "Application Working";
     }
+
+    @GetMapping
+    public String welCome(){
+        return "Welcome Team Alpha";
+    }
 }

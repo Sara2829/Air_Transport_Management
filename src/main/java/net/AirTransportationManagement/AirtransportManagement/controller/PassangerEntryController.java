@@ -1,12 +1,11 @@
 package net.AirTransportationManagement.AirtransportManagement.controller;
 
 import net.AirTransportationManagement.AirtransportManagement.entity.Passaenger;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 
@@ -31,9 +30,14 @@ public class PassangerEntryController implements UserManagement{
 
 
     @GetMapping("id/{myId}")
-    public Passaenger getPassangerbyId(@PathVariable Long myId){
+    public ResponseEntity<Passaenger> getPassangerbyId(@PathVariable Long myId){
 
-     return passangerEntries.get(myId);
+        Optional<Passaenger> passaengerEntry = Optional.ofNullable(passangerEntries.get(myId));
+
+        if(passaengerEntry.isPresent()){
+            return new ResponseEntity<>(passangerEntries.get(myId), HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
 
