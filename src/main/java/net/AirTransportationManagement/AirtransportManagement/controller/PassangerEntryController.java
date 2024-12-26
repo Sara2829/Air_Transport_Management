@@ -28,16 +28,22 @@ public class PassangerEntryController implements UserManagement{
         return true;
     }
 
+
+
     @GetMapping("id/{myId}")
     public Passaenger getPassangerbyId(@PathVariable Long myId){
 
      return passangerEntries.get(myId);
     }
 
+
     @DeleteMapping("id/{myId}")
     @Override
-    public boolean deleteUserAccount() {
-        return false;
+    public boolean deleteUserAccount(@PathVariable Long myId) {
+
+        passangerEntries.remove(myId);
+        return true;
+
     }
 
 
@@ -53,6 +59,10 @@ public class PassangerEntryController implements UserManagement{
         return false;
     }
 
+    @Override
+    public boolean deleteUserAccount() {
+        return false;
+    }
 
 
     @Override
