@@ -19,13 +19,9 @@ public interface UserManagement {
     @DeleteMapping("id/{myId}")
     boolean deleteUserAccount(@PathVariable Long myId);
 
-    public List<Passaenger> getAllUsers(Passaenger myentry);
 
-  public boolean  createUserAccount();
 
-  public boolean deleteUserAccount();
 
-  public boolean  deactivateUserAccount();
 
 
 }

@@ -48,25 +48,5 @@ public class PassangerEntryController implements UserManagement{
 
 
 
-    @Override
-    public List<Passaenger> getAllUsers(Passaenger myentry) {
-        return List.of();
-    }
 
-
-    @Override
-    public boolean createUserAccount() {
-        return false;
-    }
-
-    @Override
-    public boolean deleteUserAccount() {
-        return false;
-    }
-
-
-    @Override
-    public boolean deactivateUserAccount() {
-        return false;
-    }
 }
